@@ -1,0 +1,176 @@
+/* ===================== Reset dasar ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* ===================== Body & Background ===================== */
+body {
+    display: flex;
+    flex-direction: column;      
+    justify-content: flex-start; 
+    align-items: center;         
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+/* ===================== Marquee Teks di Atas ===================== */
+.marquee {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    padding: 12px 20px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.marquee-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 70s linear infinite;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4b0082;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+@keyframes scrollText {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+/* ===================== Hati Besar ===================== */
+.heart-big {
+    width: 60vmin;
+    height: 60vmin;
+    fill: #2079ff;
+    stroke: #2079ff;
+    opacity: 0.25;
+    animation: bigBeat 3s ease-in-out infinite;
+    margin-top: 100px;    /* hati turun dari marquee */
+    margin-bottom: 30px;  /* jarak ke konten */
+    z-index: 2;
+}
+
+@keyframes bigBeat {
+    0%, 100% { transform: scale(1); opacity: 0.25; }
+    50% { transform: scale(1.1); opacity: 0.35; }
+}
+
+/* ===================== Kotak Konten (Haii Nadira) ===================== */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(161, 140, 209, 0.35);
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1e2ad8;
+    text-shadow: 1px 1px 3px #ffb6c1;
+}
+
+.sweet-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 25px;
+    color: #1e2ad8;
+}
+
+.btn {
+    background: #1e2ad8;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.5);
+    transition: transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* ===================== Bintang Jatuh ===================== */
+.star {
+    position: absolute;
+    top: -20px;
+    color: #ffffff;
+    font-size: 14px;
+    opacity: 0.9;
+    text-shadow: 0 0 6px #a18cd1, 0 0 12px #fbc2eb;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ===================== Bunga Samping ===================== */
+.flowers-side span {
+    position: absolute;
+    top: -20px;
+    right: -50px;
+    font-size: 28px;
+    animation: flowerSideFall linear infinite;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.flowers-side span:nth-child(1) { top: 5%; animation-duration: 8s; font-size: 24px; }
+.flowers-side span:nth-child(2) { top: 15%; animation-duration: 10s; font-size: 30px; }
+.flowers-side span:nth-child(3) { top: 25%; animation-duration: 12s; font-size: 26px; }
+.flowers-side span:nth-child(4) { top: 35%; animation-duration: 9s;  font-size: 32px; }
+.flowers-side span:nth-child(5) { top: 45%; animation-duration: 11s; font-size: 22px; }
+.flowers-side span:nth-child(6) { top: 55%; animation-duration: 13s; font-size: 28px; }
+.flowers-side span:nth-child(7) { top: 65%; animation-duration: 15s; font-size: 34px; }
+
+@keyframes flowerSideFall {
+    0% { transform: translate(0,0) rotate(0deg); opacity:1; }
+    50% { transform: translate(-40vw,50vh) rotate(180deg); opacity:0.8; }
+    100% { transform: translate(-80vw,110vh) rotate(360deg); opacity:0; }
+}
+
+/* ===================== Responsif Tablet & HP ===================== */
+@media (max-width: 768px) {
+    .heart-big { width: 50vmin; height: 50vmin; margin-top: 80px; margin-bottom: 20px; }
+    h1 { font-size: 1.5rem; }
+    .sweet-text { font-size: 1rem; }
+    .btn { padding: 10px 20px; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+    .heart-big { width: 45vmin; height: 45vmin; margin-top: 60px; margin-bottom: 15px; }
+    h1 { font-size: 1.3rem; }
+    .sweet-text { font-size: 0.9rem; }
+    .btn { padding: 8px 15px; font-size: 0.85rem; }
+}

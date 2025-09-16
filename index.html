@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Love Animation - Heart Perfect</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Logo love besar di kiri -->
+    <svg viewBox="0 0 512 512" class="heart-big" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M471.7 73.3c-54.5-46.4-136-38.4-186.6 13.5L256 115.5l-29.1-28.7C176.3 34.9 94.8 26.9 40.3 73.3-13.8 119.1-13.5 205.6 40.9 251.7l187.5 183.4c7.5 7.3 17.4 11 27.5 11s20-3.7 27.5-11L471.1 251.7c54.5-46.1 54.8-132.6.6-178.4z"/>
+    </svg>
+
+    <!-- Kotak konten -->
+    <div class="container">
+        <h1>Haii Nadira</h1>
+        <p class="sweet-text">
+            "Kamu lebih kuat dari yang kamu kira, lebih berani dari yang kamu yakini, dan lebih cantik dari yang kamu bayangkan."
+        </p>
+        <button class="btn">Jangan Lupa Mabarnya. Mwehehe :p 
+        </button>
+    </div>
+
+
+    <!-- Script bintang jatuh -->
+    <script>
+        function createStar() {
+            const star = document.createElement("div");
+            star.classList.add("star");
+            star.innerHTML = "★";
+            document.body.appendChild(star);
+
+            const left = Math.random() * window.innerWidth;
+            const size = Math.random() * 15 + 10;
+            const duration = Math.random() * 3 + 2;
+
+            star.style.left = left + "px";
+            star.style.fontSize = size + "px";
+            star.style.animationDuration = duration + "s";
+
+            setTimeout(() => {
+                star.remove();
+            }, duration * 1000);
+        }
+
+        setInterval(createStar, 300);
+    </script>
+
+<div class="flowers-side">
+    <span>🌸</span>
+    <span>🌼</span>
+    <span>🌺</span>
+    <span>🌸</span>
+    <span>🌼</span>
+    <span>🌸</span>
+    <span>🌺</span>
+</div>
+
+<div class="marquee">
+    <div class="marquee-content">
+        Hei, cantik! Kadang hidup bikin kita capek dan pengen nyerah, tapi tarik napas dulu, senyum dikit, dan inget kalau kamu udah sejauh ini. Setiap langkah kecilmu hari ini pasti bakal bawa kamu lebih dekat ke mimpi-mimpi besarmu. Tetap semangat ya
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+    
+</body>
+</html>
